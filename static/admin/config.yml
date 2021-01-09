@@ -27,6 +27,18 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
+  - name: "products"
+    label: "Products"
+    folder: "src/pages/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Score", name: "score", widget: "number", min: 1, max: 5, step: 0.1, value_type: float }
+      - {label: "Description", name: "description", widget: "text"}
+
   - name: "pages"
     label: "Pages"
     files:
