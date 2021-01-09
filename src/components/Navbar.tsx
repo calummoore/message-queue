@@ -3,14 +3,14 @@ import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
-  }
+export interface NavbarState {
+  active: boolean
+  navBarActiveClass: string
+}
+
+const Navbar = class extends React.Component<{}, NavbarState> {
+  active = false
+  navBarActiveClass = ''
 
   toggleHamburger = () => {
     // toggle the active boolean in the state
@@ -42,7 +42,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              <img src={logo} alt="Queues Logo" style={{ width: '120px' }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -69,17 +69,11 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/blog">
                 Blog
               </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
             </div>
             <div className="navbar-end has-text-centered">
               <a
                 className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+                href="https://github.com/calummoore/message-queue"
                 target="_blank"
                 rel="noopener noreferrer"
               >
